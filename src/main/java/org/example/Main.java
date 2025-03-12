@@ -11,7 +11,7 @@ public class Main {
         appLoop();
     }
 
-    private static void appLoop() {
+    static void appLoop() {
         while (true) {
             displayPossibleOptions();
             int choice = scanner.nextInt();
@@ -27,7 +27,7 @@ public class Main {
         }
     }
 
-    private static void displayPossibleOptions() {
+    static void displayPossibleOptions() {
         System.out.println("\nSports Time Tracker");
         System.out.println("1. Log a sport activity");
         System.out.println("2. View logged activities");
