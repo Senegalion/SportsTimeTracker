@@ -4,37 +4,36 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    private static ArrayList<SportsActivity> activities = new ArrayList<>();
-    private static Scanner scanner = new Scanner(System.in);
+    private static final ArrayList<SportsActivity> activities = new ArrayList<>();
+    private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        appLoop();
+    }
+
+    private static void appLoop() {
         while (true) {
-            System.out.println("\nSports Time Tracker");
-            System.out.println("1. Log a sport activity");
-            System.out.println("2. View logged activities");
-            System.out.println("3. Calculate total time spent on sports");
-            System.out.println("4. Exit");
-            System.out.print("Choose an option: ");
+            displayPossibleOptions();
             int choice = scanner.nextInt();
             scanner.nextLine();
 
             switch (choice) {
-                case 1:
-                    logActivity();
-                    break;
-                case 2:
-                    viewActivities();
-                    break;
-                case 3:
-                    calculateTotalTime();
-                    break;
-                case 4:
-                    System.out.println("Exiting application.");
-                    return;
-                default:
-                    System.out.println("Invalid choice, please try again.");
+                case 1 -> logActivity();
+                case 2 -> viewActivities();
+                case 3 -> calculateTotalTime();
+                case 4 -> System.out.println("Exiting application.");
+                default -> System.out.println("Invalid choice, please try again.");
             }
         }
+    }
+
+    private static void displayPossibleOptions() {
+        System.out.println("\nSports Time Tracker");
+        System.out.println("1. Log a sport activity");
+        System.out.println("2. View logged activities");
+        System.out.println("3. Calculate total time spent on sports");
+        System.out.println("4. Exit");
+        System.out.print("Choose an option: ");
     }
 
     private static void logActivity() {
